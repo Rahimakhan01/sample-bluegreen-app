@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    IMAGE = "mydockerhubuser/myapp:${BUILD_NUMBER}"
+    IMAGE = "rahima01/myapp:${BUILD_NUMBER}"
     COLOR = "green"
   }
 
@@ -20,9 +20,9 @@ pipeline {
     }
 
     stage('Push Image') {
-      steps {
+      steps {d
         withCredentials([string(credentialsId: 'dockerhub-pass', variable: 'DOCKER_PASS')]) {
-          sh 'echo $DOCKER_PASS | docker login -u mydockerhubuser --password-stdin'
+          sh 'echo $DOCKER_PASS | docker login -u rahima01 --password-stdin'
           sh 'docker push $IMAGE'
         }
       }
