@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Clone Repo') {
       steps {
-        git 'https://github.com/Rahimakhan01/sample-bluegreen-app.git'
+        git branch: 'main', url: 'https://github.com/Rahimakhan01/sample-bluegreen-app.git'
       }
     }
 
